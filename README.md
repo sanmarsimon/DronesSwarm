@@ -1,19 +1,19 @@
 # Projet 3 INF3995 - Équipe 103
 
-# Prérequis
+# Prerequisites
 * [Docker](https://docs.docker.com/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 * [x11Docker](https://github.com/mviereck/x11docker)
 
-# Cloner le répertoire avec tous les sous-modules
+# Cloner the repo
 
 ```
 git clone --recurse-submodules https://gitlab.com/polytechnique-montr-al/inf3995/20221/equipe-103/INF3995-103.git
 ```
 
-## Liens Démos Videos
+## Video demos
 
-1. [RF1](https://youtu.be/13IK0fUkqR0)
+1. [RF2 RF3 RF4 RF5 RF6 RF7 RF8 RF9 et RF11 (physique)](https://youtu.be/435cvL4hRAc) MAIN ONE!!
 
 2. [RF2 et RF4 (simulation)](https://youtu.be/DDPy3zP6av8)
 
@@ -47,28 +47,26 @@ git clone --recurse-submodules https://gitlab.com/polytechnique-montr-al/inf3995
 
 17. [RC1 (physique)](https://youtu.be/ZCaThBH-fKE)
 
-18. [RF2 RF3 RF4 RF5 RF6 RF7 RF8 RF9 et RF11 (physique)](https://youtu.be/435cvL4hRAc)
-
 19. [RC2:](https://youtu.be/ZYtIfvIZdOM)
 
-20. [RC3:](https://youtu.be/fqE2uKaNJmc)
+19. [RC3:](https://youtu.be/fqE2uKaNJmc)
 
-21. [RC5:](https://youtu.be/0Ivn4ZESiYs)
+20. [RC5:](https://youtu.be/0Ivn4ZESiYs)
 
-# Pour tout démarrer
+# To start the project
 ```
 ./start.sh
 ```
 
-## Interface
+## Frontend
 
-Le frontend est construit en typescript avec Angular.
+Built with Angular.
 
-Pour le démarrer en utilisant docker compose:
+To run it using docker compose:
 ```
 docker-compose up --build Interface
 ```
-Ou sans docker compose:
+Or without docker compose:
 
 ```
 cd Interface
@@ -79,16 +77,16 @@ npm install duration
 ng serve –open
 ```
 
-## Serveur Web
+## Backend
 
 
-Le Back-end est construit en utilisant Python avec le framework Flask
+Built with Flask(Python)
 
-Pour le démarrer en utilisant docker compose:
+Run it with docker compose:
 ```
 docker-compose up --build server
 ```
-Ou sans docker compose:
+Or without docker compose:
 
 ```
 cd Server
@@ -100,32 +98,29 @@ pip3 install flask-cors
 pip3 install -r requirements.txt
 ```
 
-Ensuite se rendre au dossier server/src et lancer le serveur avec : 
+Then run it :
 ```
-python3 main.py
+python3 src/main.py
 ```
 
 ## Crazyflie-firmware
-Ce sous-module contient le code de l'embarqué. C'est le code préalablement flashé dans les drônes pour que ces derniers executnet les requis.
+This is the firmware for our crazyflie drone
 
 ## Simulation
-### Note: Avant de d'effectuer les commandes suivantes, il est important de s'assurer que le serveur **ET** l'interface soient en éxecution
+### Note: Before running the following commands, make sure the frontend and backend are already running
 
-Pour le démarrer en utilisant docker compose:
+Run it with docker compose:
 ```
 docker-compose up --build simulation
 ```
-Puis Lancer le script sim_launch.sh situé à la racine du dossier simulation.
+Then run the script sim_launch.sh in the simulation folder
 ```
-./simulation.sim_launch.sh
+./simulation/sim_launch.sh
 ```
 
-Appuyer sur le bouton "play"
+Press the play button
 
-# Tests
-Description des tests du système présent dans le fichier test.pdf
-
-# Convention de codage
+# Coding style
 
 - ## Typescript: [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
 
