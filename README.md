@@ -5,7 +5,7 @@
 * [Docker Compose](https://docs.docker.com/compose/install/)
 * [x11Docker](https://github.com/mviereck/x11docker)
 
-# Cloner the repo
+# Clone the repo
 
 ```
 git clone --recurse-submodules https://gitlab.com/polytechnique-montr-al/inf3995/20221/equipe-103/INF3995-103.git
