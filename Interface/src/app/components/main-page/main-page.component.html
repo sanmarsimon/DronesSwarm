@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="layout">
+    <section class="drones-section">
+      <div class="slider-padding">
+        <mat-slide-toggle (click)="this.onSliderClick()" [(ngModel)]="isSimulation" color="primary">Activate simulation mode</mat-slide-toggle>
+      </div>
+      
+      <div class="title">
+        <h1> Drones : </h1>
+      </div>
+      
+          <!-- <div class="common-padding"> -->
+            <div>
+              <div class="drones">
+                <ng-container *ngIf="this.realDrones.length && !isSimulation">
+                  <div class="drones-cards">
+                    <app-drone-card
+                    [droneData]="drone"
+                    *ngFor="let drone of this.realDrones"
+                    ></app-drone-card>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="this.simDrones.length && isSimulation">
+                  <div class="drones-cards">
+                    <app-drone-card
+                    [droneData]="drone"
+                    *ngFor="let drone of this.simDrones"
+                    ></app-drone-card>
+                  </div>
+                </ng-container>
+                <div *ngIf="realDrones.length ===0 && !isSimulation">
+                  <p> There is no connected drones</p>
+                </div>
+                <div *ngIf="simDrones.length ===0 && isSimulation">
+                  <p> There is no connected drones</p>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </section> 
+          
+          <div class="title">
+            <h1> Missions :</h1>
+          </div>
+          
+          <div class="missions">
+            <div class="mission-buttons">
+              <button mat-button (click)="this.startMission()">Start Mission</button>
+              <button mat-button (click)="this.cancelMission()">Cancel Mission </button>
+              <button mat-button (click)="this.returnToBase()">Return to base</button>
+              <button mat-button (click)="this.saveMission()"> Save Mission</button>
+            </div>
+            
+            <app-mission></app-mission>
+          </div>
+          
+          <div class="footer-item">
+            <h2 class="team-name">Équipe 103</h2>
+          <p>Zakaria Diabi, Sanmar Simon, Marc-Olivier Lemieux, Sinda Drira, Aram Zand</p>
+        </div>
+      </div>
+    </div>
+    

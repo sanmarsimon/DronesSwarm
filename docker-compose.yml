@@ -1,0 +1,26 @@
+version: "3.2"
+services:
+
+  
+  client:
+    build: ./Interface/
+    image: interface
+    ports: 
+      - 4200:4200
+    depends_on:
+     - server
+  
+  server:
+    build: ./server/
+    image: server
+    stdin_open: true # docker run -i
+    tty: true 
+    ports: 
+      - 5000:5000
+    # devices:
+    #  - /dev/bus:/dev/bus
+  
+  simulation:
+    build: ./simulation/
+    image: simulation
+ 
